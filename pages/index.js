@@ -1,5 +1,5 @@
 function Home() {
-    return <h1>Manuzita</h1>
+    return <h1>TABNEWS-CLONE</h1>
 }
 
 export default Home;
