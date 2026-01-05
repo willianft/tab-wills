@@ -7,9 +7,5 @@ function Home() {
       lado, com carinho, respeito e amor. Te Amo! ❤️{" "}
     </h1>
   );
-
-  function teste() {
-    console.log("Teste");
-  }
 }
 export default Home;
