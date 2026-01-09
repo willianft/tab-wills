@@ -1,4 +1,175 @@
-function Home() {
-  return <h1> Em Contrução ... </h1>;
-}
-export default Home;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TABWILLS • Em Construção</title>
+
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: rgba(255,255,255,0.05);
+      --text: #ffffff;
+      --accent: #00eaff;
+      --muted: rgba(255,255,255,0.6);
+    }
+
+    body.light {
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --text: #0b0f1a;
+      --accent: #0066ff;
+      --muted: #555;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: radial-gradient(circle at top, var(--accent) 0%, var(--bg) 40%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .container {
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      padding: 50px 40px;
+      border-radius: 22px;
+      text-align: center;
+      width: 90%;
+      max-width: 520px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+      animation: fadeUp 1.2s ease;
+    }
+
+    /* LOGO ANIMADO */
+    .logo {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo span {
+      color: var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: scan 2.5s linear infinite;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin: 25px 0 35px;
+      line-height: 1.5;
+    }
+
+    .loader {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 5px solid rgba(255,255,255,0.15);
+      border-top-color: var(--accent);
+      margin: 0 auto 30px;
+      animation: spin 1s linear infinite;
+    }
+
+    /* BOTÃO DARK/LIGHT */
+    .toggle {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .toggle:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    @keyframes scan {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <button class="toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+
+  <div class="container">
+    <div class="loader"></div>
+
+    <div class="logo">
+      TAB<span>WILLS</span>
+    </div>
+
+    <p>
+      Estamos construindo algo absurdo de bom.<br>
+      Ainda sem faturar, mas com muito conceito.
+    </p>
+
+    <div class="footer">
+      © 2026 • TABWILLS • powered by sonhos e café
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+    }
+  </script>
+</body>
+</html>
