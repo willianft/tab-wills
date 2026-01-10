@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [light, setLight] = useState(false)
+  const [light, setLight] = useState(false);
 
   useEffect(() => {
-    document.body.className = light ? 'light' : ''
-  }, [light])
+    document.body.className = light ? "light" : "";
+  }, [light]);
 
   return (
     <>
@@ -21,14 +21,15 @@ export default function Home() {
         </div>
 
         <p>
-          Estamos construindo algo absurdo de bom.<br />
-          Ainda sem faturar, mas com muito conceito.
+          Estamos construindo algo bom.
+          <br />
+          Sem faturar, mas com muito conceito.
         </p>
 
         <div className="footer">
-          © 2026 • TABWILLS • powered by sonhos e café
+          © 2026 • TABWILLS • powered by Willian Teixeira
         </div>
       </div>
     </>
-  )
+  );
 }
