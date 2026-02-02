@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <button className="toggle" onClick={() => setLight(!light)}>
-        🌙 / ☀️
+        🌜​ / ☀️
       </button>
 
       <div className="container">
@@ -27,7 +27,7 @@ export default function Home() {
         </p>
 
         <div className="footer">
-          © 2026 • TABWILLS • powered by Willian Teixeira
+          © 2026 • TABWILLS • powered by Willian Teixeira ™️​
         </div>
       </div>
     </>
